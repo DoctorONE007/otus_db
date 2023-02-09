@@ -29,7 +29,7 @@ class BookDaoJdbcTest {
         Book book = new Book(1, "Drew");
         assertNull(bookDaoJdbc.findByTitle("Drew"));
         bookDaoJdbc.insert(book);
-        assertEquals("Drew", bookDaoJdbc.findByTitle("Drew").getTitle());
+        assertEquals("Drew", bookDaoJdbc.findByTitle("Drew").get(0).getTitle());
     }
 
     @Test

@@ -1,12 +1,14 @@
 package com.example.libotus.repository;
 
 import com.example.libotus.entity.Comment;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface CommentRepository extends JpaRepository<Comment, Long> {
+import java.util.List;
 
-    Comment findByText (String text);
-    Comment findByBookId (long bookId);
+@Repository
+public interface CommentRepository extends MongoRepository<Comment, Long> {
+
+    List<Comment> findByText (String text);
+    List<Comment> findByBookId (long bookId);
 }

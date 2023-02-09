@@ -18,12 +18,12 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public Comment findByText(String text) {
+    public  List<Comment> findByText(String text) {
         return repository.findByText(text);
     }
 
     @Override
-    public Comment findByBookId(long bookId) {
+    public  List<Comment> findByBookId(long bookId) {
         return repository.findByBookId(bookId);
     }
 

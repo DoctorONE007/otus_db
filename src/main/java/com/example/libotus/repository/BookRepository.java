@@ -1,11 +1,13 @@
 package com.example.libotus.repository;
 
 import com.example.libotus.entity.Book;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface BookRepository extends JpaRepository<Book, Long> {
+import java.util.List;
 
-    Book findByTitle(String title);
+@Repository
+public interface BookRepository extends MongoRepository<Book, Long> {
+
+    List<Book> findByTitle(String title);
 }

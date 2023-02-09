@@ -1,7 +1,6 @@
 package com.example.libotus.service;
 
 import com.example.libotus.entity.Book;
-import com.example.libotus.repository.AuthorRepository;
 import com.example.libotus.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +17,7 @@ public class BookServiceImpl implements BookService{
     }
 
     @Override
-    public Book findByTitle(String title) {
+    public  List<Book> findByTitle(String title) {
         return repository.findByTitle(title);
     }
 

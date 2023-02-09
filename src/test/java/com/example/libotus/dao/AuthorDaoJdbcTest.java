@@ -39,7 +39,7 @@ class AuthorDaoJdbcTest {
         Author author = new Author("Drew");
         assertNull(authorDaoJdbc.getByName("Drew"));
         authorDaoJdbc.insert(author);
-        assertEquals("Drew", authorDaoJdbc.getByName("Drew").getName());
+        assertEquals("Drew", authorDaoJdbc.getByName("Drew").get(0).getName());
     }
 
     @Test
@@ -47,7 +47,7 @@ class AuthorDaoJdbcTest {
         Author author = new Author("Drew");
         assertNull(authorDaoJdbc.getByName("Drew"));
         authorDaoJdbc.insert(author);
-        assertEquals("Drew", authorDaoJdbc.getByName("Drew").getName());
+        assertEquals("Drew", authorDaoJdbc.getByName("Drew").get(0).getName());
 
 
     }

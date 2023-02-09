@@ -28,7 +28,7 @@ class GenreDaoJdbcTest {
         Genre genre = new Genre(1, "Drew");
         assertNull(genreDaoJdbc.findByTitle("Drew"));
         genreDaoJdbc.insert(genre);
-        assertEquals("Drew", genreDaoJdbc.findByTitle("Drew").getTitle());
+        assertEquals("Drew", genreDaoJdbc.findByTitle("Drew").get(0).getTitle());
     }
 
     @Test

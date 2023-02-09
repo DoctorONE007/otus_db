@@ -1,33 +1,25 @@
 package com.example.libotus.entity;
 
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Transient;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+import org.springframework.data.annotation.Id;
 
-//@Data
-//@RequiredArgsConstructor
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "Genre")
 @Getter
 @ToString
-@Table(name = "genres")
 public class Genre {
+
+    @Transient
+    public static final String SEQUENCE_NAME = "genres_sequence";
     @Id
-//    @SequenceGenerator(
-//            name = "genre_sequence",
-//            sequenceName = "genre_sequence",
-//            allocationSize = 1
-//    )
-//    @GeneratedValue(strategy = GenerationType.SEQUENCE,
-//            generator = "genre_sequence")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(updatable = false)
     private long id;
-    @Column(nullable = false,
-            columnDefinition = "TEXT")
     private String title;
 
-    public Genre (String title){
-        this.title=title;
+    public Genre(String title) {
+        this.title = title;
     }
 }

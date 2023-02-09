@@ -23,7 +23,7 @@ public class AuthorServiceImpl implements AuthorService {
     }
 
     @Override
-    public Author getByName(String name) {
+    public List<Author> getByName(String name) {
         return repository.findByName(name);
     }
 

@@ -8,6 +8,6 @@ public interface AuthorService {
 
     Author getById (long id);
     List<Author> getAll();
-    Author getByName(String name);
+    List<Author> getByName(String name);
     void insert (Author author);
 }

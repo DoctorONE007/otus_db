@@ -1,36 +1,31 @@
 package com.example.libotus.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Transient;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.data.annotation.Id;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@Entity(name = "Comment")
 @ToString
-@Table(name = "comments")
 public class Comment {
 
+    @Transient
+    public static final String SEQUENCE_NAME = "comments_sequence";
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(updatable = false)
     private long id;
-
     private long bookId;
-
-    private Timestamp time;
-    @Column(nullable = false,
-            columnDefinition = "TEXT")
+    private LocalDateTime time;
     private String text;
 
-    public Comment (long bookId, Timestamp time, String text){
+    public Comment(long bookId, LocalDateTime time, String text) {
         this.bookId = bookId;
-        this.time=time;
-        this.text=text;
+        this.time = time;
+        this.text = text;
     }
 }

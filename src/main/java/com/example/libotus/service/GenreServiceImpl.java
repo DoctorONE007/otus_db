@@ -1,7 +1,6 @@
 package com.example.libotus.service;
 
 import com.example.libotus.entity.Genre;
-import com.example.libotus.repository.BookRepository;
 import com.example.libotus.repository.GenreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +17,7 @@ public class GenreServiceImpl implements GenreService{
     }
 
     @Override
-    public Genre findByTitle(String title) {
+    public List<Genre> findByTitle(String title) {
         return repository.findByTitle(title);
     }
 
